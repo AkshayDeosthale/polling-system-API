@@ -1,0 +1,117 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Polling System",
+    "dateExported": "2023-09-21T09:42:52.816Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "17fa49c8-04f7-4623-9cd7-e2ea815a68fb",
+            "colId": "3da1f7ba-1998-491b-8bba-4002f9576487",
+            "containerId": "",
+            "name": "GetAllQuestions",
+            "url": "http://localhost:3000/questions",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-21T08:30:09.569Z",
+            "modified": "2023-09-21T09:00:52.175Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3d7da158-eec9-43f0-a395-b8a38d55c0b6",
+            "colId": "3da1f7ba-1998-491b-8bba-4002f9576487",
+            "containerId": "",
+            "name": "GetQuestionByID",
+            "url": "http://localhost:3000/questions/650c026415676384088e4ea9",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-09-21T08:30:41.060Z",
+            "modified": "2023-09-21T09:08:09.093Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "caaad9bc-c1b2-40fa-a12e-097390c2cf2d",
+            "colId": "3da1f7ba-1998-491b-8bba-4002f9576487",
+            "containerId": "",
+            "name": "Create new Question",
+            "url": "http://localhost:3000/questions/create",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-09-21T08:31:30.458Z",
+            "modified": "2023-09-21T09:00:39.182Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"This question Akshay?\",\n  \"options\": [\n    {\n      \"title\": \"Option 1\",\n      \"vote\": 0\n    },\n    {\n      \"title\": \"Option 2\",\n      \"vote\": 0\n    },\n    {\n      \"title\": \"Option 3\",\n      \"vote\": 0\n    },\n    {\n      \"title\": \"Option 4\",\n      \"vote\": 0\n    }\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7149c70d-77d6-49c9-a313-9d0fe58e373f",
+            "colId": "3da1f7ba-1998-491b-8bba-4002f9576487",
+            "containerId": "",
+            "name": "Delete Question by ID",
+            "url": "http://localhost:3000/questions/650c031208564079354e68e4/delete",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-09-21T08:39:31.026Z",
+            "modified": "2023-09-21T09:01:25.249Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b8c5e934-b949-441b-b0dc-5cb0229fd318",
+            "colId": "3da1f7ba-1998-491b-8bba-4002f9576487",
+            "containerId": "",
+            "name": "Create option in question",
+            "url": "http://localhost:3000/questions/650c026415676384088e4ea9/options/create",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-09-21T09:02:20.514Z",
+            "modified": "2023-09-21T09:07:59.672Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Option from question API\",\n  \"vote\": 69\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "af287e4d-5b50-47f3-b386-839c533ab065",
+            "colId": "3da1f7ba-1998-491b-8bba-4002f9576487",
+            "containerId": "",
+            "name": "Vote for an answer",
+            "url": "http://localhost:3000/options/650c026415676384088e4ea5/add-vote",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-09-21T09:17:40.624Z",
+            "modified": "2023-09-21T09:31:22.230Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cd4a3cd8-7640-4ab3-858d-93e2dc3e73e8",
+            "colId": "3da1f7ba-1998-491b-8bba-4002f9576487",
+            "containerId": "",
+            "name": "Delete answer",
+            "url": "http://localhost:3000/options/650c026415676384088e4ea5/delete",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2023-09-21T09:26:07.232Z",
+            "modified": "2023-09-21T09:32:44.792Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
