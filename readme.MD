@@ -34,3 +34,7 @@ Make sure you have the following software installed on your system:
    ```bash
    node index.js
    ```
+
+4. **Import api calls in your postmane/thunderclient:**
+
+   download polingsystemdemo.json and inport in your client
