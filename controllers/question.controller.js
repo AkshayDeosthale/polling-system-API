@@ -1,6 +1,11 @@
 const QUESTION = require("../models/question.model");
 const ANSWER = require("../models/answer.model");
 
+const linkURL =
+  process.env.ENVE === "dev"
+    ? `http://localhost:${process.env.PORT}`
+    : "https://polling-system-7v3m.onrender.com/";
+
 module.exports.createQuestion = async function (req, res) {
   try {
     const { title, options } = req.body;
@@ -9,9 +14,7 @@ module.exports.createQuestion = async function (req, res) {
     await options.forEach(async (element) => {
       const answerdb = new ANSWER(element);
       answerIdArray.push(answerdb._id.toString());
-      answerdb.link_to_vote = `http://localhost:${
-        process.env.PORT
-      }/options/${answerdb._id.toString()}/add-vote`;
+      answerdb.link_to_vote = `${linkURL}/options/${answerdb._id.toString()}/add-vote`;
       await answerdb.save();
     });
 
@@ -27,9 +30,7 @@ module.exports.createQuestion = async function (req, res) {
 module.exports.createQuestionOption = async function (req, res) {
   try {
     const answerdb = new ANSWER(req.body);
-    answerdb.link_to_vote = `http://localhost:${
-      process.env.PORT
-    }/options/${answerdb._id.toString()}/add-vote`;
+    answerdb.link_to_vote = `${linkURL}/options/${answerdb._id.toString()}/add-vote`;
     await answerdb.save();
 
     const question = await QUESTION.updateOne(
