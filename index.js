@@ -25,11 +25,13 @@ async function DBCONNECT() {
   });
 }
 
-app.listen(port, async () => {
+app.listen(process.env.PORT, async () => {
   try {
     await DBCONNECT();
     console.log("Connected To MongoDB");
-    console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+    console.log(
+      `⚡️[server]: Server is running at http://localhost:${process.env.PORT}`
+    );
   } catch (error) {
     console.log("Error connecting to MongoDB");
     return;

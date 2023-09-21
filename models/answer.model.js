@@ -4,6 +4,7 @@ const answerSchema = new mongoose.Schema(
   {
     title: String,
     vote: Number,
+    link_to_vote: String,
   },
   {
     timestamps: true,

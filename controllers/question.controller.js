@@ -9,6 +9,9 @@ module.exports.createQuestion = async function (req, res) {
     await options.forEach(async (element) => {
       const answerdb = new ANSWER(element);
       answerIdArray.push(answerdb._id.toString());
+      answerdb.link_to_vote = `http://localhost:${
+        process.env.PORT
+      }/options/${answerdb._id.toString()}/add-vote`;
       await answerdb.save();
     });
 
@@ -24,6 +27,9 @@ module.exports.createQuestion = async function (req, res) {
 module.exports.createQuestionOption = async function (req, res) {
   try {
     const answerdb = new ANSWER(req.body);
+    answerdb.link_to_vote = `http://localhost:${
+      process.env.PORT
+    }/options/${answerdb._id.toString()}/add-vote`;
     await answerdb.save();
 
     const question = await QUESTION.updateOne(
