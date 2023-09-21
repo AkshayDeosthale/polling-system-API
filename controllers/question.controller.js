@@ -4,7 +4,7 @@ const ANSWER = require("../models/answer.model");
 const linkURL =
   process.env.ENVE === "dev"
     ? `http://localhost:${process.env.PORT}`
-    : "https://polling-system-7v3m.onrender.com/";
+    : "https://polling-system-7v3m.onrender.com";
 
 module.exports.createQuestion = async function (req, res) {
   try {
