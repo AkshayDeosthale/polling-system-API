@@ -26,10 +26,10 @@ module.exports.deleteAnswer = async function (req, res) {
     const option = ANSWER.findById(req.params.id);
     if (option.vote !== 0) {
       res.status(500).send("Cannot be delete option with likes");
+    } else {
+      await ANSWER.findByIdAndDelete(req.params.id);
+      res.send("Option deleted");
     }
-
-    await ANSWER.findByIdAndDelete(req.params.id);
-    res.send("Option deleted");
   } catch (error) {
     console.log(error);
   }
